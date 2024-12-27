@@ -1,5 +1,5 @@
-use printer_listener::add;
+use printer_listener::watch;
 
 fn main() {
-    println!("2 + 3 = {}", add(2, 3));
+    watch().unwrap();
 }
