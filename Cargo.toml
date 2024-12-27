@@ -6,3 +6,4 @@ authors = ["mb.codingtest@gmail.com"]
 description = "A printout folder watcher for windows"
 
 [dependencies]
+tokio = "1.42.0"
