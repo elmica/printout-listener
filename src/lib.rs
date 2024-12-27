@@ -13,8 +13,12 @@ pub fn watch() -> Result<()> {
         match res {
             Ok(event) => {
                 match event.kind {
-                    EventKind::Create(_) => println!("Created: {:?}", event.paths),
-                    _ => println!("Other: {:?}", event.paths),
+                    EventKind::Create(_) => {
+                        if event.paths[0].exists() {
+                            println!("CREATED...")
+                        }
+                    },
+                    _ => println!("___"),
                 }
             },
             Err(e) => println!("watch error: {:?}", e),
